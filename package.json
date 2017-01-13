@@ -2,13 +2,16 @@
   "name": "app-container-login",
   "version": "1.0.0",
   "description": "Basic express login handlers.",
+  "author": "adamspe@gmail.com",
+  "private": true,
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "/Users/adamspe/mapping-server/repos/app-container-login.git"
+    "url": "https://github.com/adamspe/app-container-login.git"
   },
-  "author": "adamspe@gmail.com",
-  "license": "MIT",
+  "peerDependencies": {
+      "app-container": "adamspe/app-container"
+  },
   "dependencies": {
       "passport-local": "^1.0.0"
   }
