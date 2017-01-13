@@ -3,13 +3,14 @@
 // include what is necessary, this module is broken out like this
 // so it can be used in test environments where necessary
 module.exports = {
-    init: function(container,test) {
+    init: function(container,config) {
         var debug = require('debug')('login'),
             AppContainer = require('app-container'),
             User = AppContainer.User,
             app = container.app(),
             passport = require('passport'),
             LocalStrategy = require('passport-local').Strategy;
+        config = config||{};
 
         passport.use(new LocalStrategy(
             function(username,password,done) {
@@ -42,7 +43,7 @@ module.exports = {
            })
         );
 
-        if(test) {
+        if(config.logout) {
             app.get('/logout', function(req, res){
               req.logout();
               res.redirect('/');
